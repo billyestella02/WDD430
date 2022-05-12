@@ -6,17 +6,23 @@
 
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a class="cursor-pointer" (click)="onSelected('documents')">Documents</a></li>
-                <li><a class="cursor-pointer" (click)="onSelected('messages')">Messages</a></li>
-                <li class="cursor-pointer"><a  (click)="onSelected('contacts')">Contacts</a></li>
+                <li><a (click)="onSelected('documents')">Documents</a></li>
+                <li><a (click)="onSelected('messages')">Messages</a></li>
+                <li><a  (click)="onSelected('contacts')">Contacts</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
+                <li class="dropdown" appDropdown>
                     <a href="#" class="dropdown-toggle" role="button">
                         User<span class="caret"></span>
                     </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Other</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
                 </li>
+
             </ul>
         </div>
     </div>
