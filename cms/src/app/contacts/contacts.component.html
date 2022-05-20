@@ -1,6 +1,7 @@
 <div class="row m-auto">
     <div class="col-md-5">
-        <cms-contact-list (selectedContactEvent)="selectedContact=$event"></cms-contact-list>
+        <cms-contact-list ></cms-contact-list>
+        <!-- (selectedContactEvent)="selectedContact=$event" -->
     </div>
     <div class="col-md-4">
         <cms-contact-detail *ngIf="selectedContact;" [contact]="selectedContact"></cms-contact-detail>

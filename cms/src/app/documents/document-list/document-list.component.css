@@ -14,3 +14,7 @@
     padding-left:1rem;
     padding-right:1rem;
   }
+
+  cms-document-item {
+    cursor: pointer;
+  }
