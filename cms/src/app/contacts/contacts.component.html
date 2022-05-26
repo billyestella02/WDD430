@@ -4,6 +4,7 @@
         <!-- (selectedContactEvent)="selectedContact=$event" -->
     </div>
     <div class="col-md-4">
-        <cms-contact-detail *ngIf="selectedContact;" [contact]="selectedContact"></cms-contact-detail>
+        <!-- <cms-contact-detail *ngIf="selectedContact;" [contact]="selectedContact"></cms-contact-detail> -->
+        <router-outlet></router-outlet>
     </div>
 </div>

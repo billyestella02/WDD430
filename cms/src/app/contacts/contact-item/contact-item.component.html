@@ -1,13 +1,14 @@
 <a
-href="#"
-class="list-group-item clearfix">
+class="list-group-item clearfix"
+[routerLink]="['/contacts', contact.id]"
+routerLinkActive="active">
 <div class="pull-left">
-    <h4 class="list-group-item-heading">{{ contactItem.name }}</h4>  
+    <h4 class="list-group-item-heading">{{ contact.name }}</h4>  
 </div>
 <span class="pull-right">
     <img 
-        src="{{ contactItem.imageUrl }}" 
-        alt="{{ contactItem.name }}" 
+        src="{{ contact.imageUrl }}" 
+        alt="{{ contact.name }}" 
         class="img-responsive"
         style="max-height: 50px;">
 </span>

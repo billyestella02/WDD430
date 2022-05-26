@@ -9,9 +9,9 @@ import { DocumentsComponent } from './documents/documents.component';
 export class AppComponent {
   title = 'cms';
 
-  @Input() selectedFeature: string = 'documents';
+  // @Input() selectedFeature: string = 'documents';
 
-  switchView(selectedFeature: string) {
-    this.selectedFeature = selectedFeature;
+  // switchView(selectedFeature: string) {
+  //   this.selectedFeature = selectedFeature;
   }
-}
+
