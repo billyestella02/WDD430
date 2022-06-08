@@ -10,6 +10,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 })
 export class ContactDetailComponent implements OnInit {
   @Input() contact!: Contact;
+  
 
   constructor(private contactService: ContactService,
               private router: Router,
