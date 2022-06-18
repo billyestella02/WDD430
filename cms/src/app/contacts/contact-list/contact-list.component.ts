@@ -8,9 +8,10 @@ import { ContactService } from '../contact.service';
   styleUrls: ['./contact-list.component.css']
 })
 export class ContactListComponent implements OnInit {
-
+  
   contacts: Contact[] =[];
   subscription: Subscription;
+  term: string = '';
 
   constructor(public contactService: ContactService) { }
 
@@ -36,8 +37,8 @@ export class ContactListComponent implements OnInit {
     this.subscription.unsubscribe();
   }
 
-  // onSelected(contact: Contact) {
-  //   // this.selectedContactEvent.emit(contact);
-  //   this.contactService.contactSelectedEvent.emit(contact);
-  // }
+  search(value: string) {
+    this.term = value;
+    console.log(this.term);
+  }
 }
