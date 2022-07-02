@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "nodemon server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -22,8 +22,11 @@
     "bootstrap": "^3.4.1",
     "cookie-parser": "^1.4.6",
     "express": "^4.18.1",
+    "mongoose": "^6.4.0",
+    "mongoose-unique-validator": "^3.1.0",
     "morgan": "^1.10.0",
     "ng2-dnd": "^5.0.2",
+    "nodemon": "^2.0.16",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

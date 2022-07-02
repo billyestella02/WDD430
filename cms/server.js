@@ -5,6 +5,7 @@ var http = require('http');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
 
 // import the routing file to handle the default (index) route
 var index = require('./server/routes/app');
@@ -12,9 +13,21 @@ var index = require('./server/routes/app');
 // ... ADD CODE TO IMPORT YOUR ROUTING FILES HERE ... 
 const messageRoutes = require('./server/routes/messages');
 const contactRoutes = require('./server/routes/contacts');
-const documentsRoutes = require('./server/routes/documents');
+const documentRoutes = require('./server/routes/documents');
 
 var app = express(); // create an instance of express
+
+// Establish a connection to the mongo database
+mongoose.connect('mongodb://localhost:27017/cms',
+  { useNewUrlParser: true }, (err, res) => {
+    if (err) {
+      console.log('Connection failed: ' + err);
+    }
+    else {
+      console.log('Connected to database!');
+    }
+  }
+);
 
 // Tell express to use the following parsers for POST data
 app.use(bodyParser.json());
@@ -45,11 +58,11 @@ app.use(express.static(path.join(__dirname, 'dist/cms')));
 
 // Tell express to map the default route ('/') to the index route
 app.use('/', index);
-app.use('/messages', messageRoutes);
-app.use('/contacts', contactRoutes);
-app.use('/documents', documentsRoutes);
 
 // ... ADD YOUR CODE TO MAP YOUR URL'S TO ROUTING FILES HERE ...
+app.use('/messages', messageRoutes);
+app.use('/contacts', contactRoutes);
+app.use('/documents', documentRoutes);
 
 // Tell express to map all other non-defined routes back to the index page
 app.get('*', (req, res) => {

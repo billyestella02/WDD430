@@ -42,7 +42,7 @@ export class MessageService {
 
     this.http
       .put<Message[]>(
-        'https://wdd430-cms-a4f31-default-rtdb.firebaseio.com/messages.json', 
+        'https://wdd430-cms-a4f31-default-rtdb.firebaseio.com/messages.json',
         messagesJSON,
         { headers: httpHeader})
       .subscribe(() => {
@@ -74,10 +74,9 @@ export class MessageService {
     if (!message) {
       return;
     }
-    
+
     this.messages.push(message);
     let messagesClone = [...this.messages];
-    // this.messageChangedEvent.emit(messagesClone);
     this.storeMessages(messagesClone);
   }
 }
