@@ -128,11 +128,20 @@ export class ContactService {
       return;
     }
 
-    this.contacts.splice(pos, 1);
-    // this.contactChangedEvent.emit([...this.contacts]);
-    let contactsListClone = [...this.contacts];
-    // this.contactListChangedEvent.next(contactsListClone);
-    this.storeContacts(contactsListClone);
+    // delete from database
+    this.http.delete('http://localhost:3000/contacts/' + contact.id)
+    .subscribe(
+      (response: Response) => {
+        this.contacts.splice(pos, 1);
+        // this.sortAndSend();
+      }
+    );
+
+    // this.contacts.splice(pos, 1);
+    // // this.contactChangedEvent.emit([...this.contacts]);
+    // let contactsListClone = [...this.contacts];
+    // // this.contactListChangedEvent.next(contactsListClone);
+    // this.storeContacts(contactsListClone);
   }
 }
 
