@@ -94,7 +94,7 @@ export class DocumentService {
 
     this.http.post<{ message: string, document: Document }>(
       'http://localhost:3000/documents',
-      document,
+      newDocument,
       { headers: headers })
       .subscribe(
         (responseData) => {
